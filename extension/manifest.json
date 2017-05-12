@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "TecnoCTHelper (beta)",
+  "short_name": "TecnoTrello",
+  "version": "1.0.0",
+  "description": "Recursos para melhorar a eficiência dos atendimentos",
+  "author": "Guilherme Rodrigues de Oliveira",
+  "background": {
+    "scripts": [
+      "assets/js/background.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "128": "assets/img/icon_extension.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://*.trello.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*tecnospeed.movidesk.com/*"
+      ],
+      "js": [
+        "assets/lib/jquery/dist/jquery.min.js",
+        "assets/js/tecno_trello.js",
+        "assets/js/resources/redmine.js",
+        "assets/js/resources/label.js",
+        "assets/js/resources/hour.js",
+        "assets/js/resources/reload.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/img/*",
+    "views/options.html"
+  ],
+  "options_page": "views/options.html"
+}
